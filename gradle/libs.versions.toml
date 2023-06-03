@@ -1,0 +1,77 @@
+[versions]
+agp = "8.2.0-alpha06"
+ksp = "1.8.21-1.0.11"
+hilt = "2.45"
+appcompat = "1.7.0-alpha02"
+accompanist = "0.31.3-beta"
+kotlin = "1.8.21"
+browser = "1.5.0"
+core-ktx = "1.10.1"
+lifecycle-runtime-ktx = "2.6.1"
+activity-compose = "1.7.2"
+compose-bom = "2023.05.01"
+retrofit = "2.9.0"
+kotlin-comp-ext = "1.4.7"
+material = "1.9.0"
+coil = "2.3.0"
+mmkv = "1.2.14"
+preference-ktx = "1.2.0"
+
+
+[plugins]
+android-Application = { id = "com.android.application", version.ref = "agp" }
+android-Library = { id = "com.android.library", version.ref = "agp" }
+kotlin-Android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+moshix = { id = "dev.zacsweers.moshix", version = "0.18.3" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+[libraries]
+browsercct = { module = "androidx.browser:browser", version.ref = "browser" }
+
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+appcompat-resources = { module = "androidx.appcompat:appcompat-resources", version.ref = "appcompat" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preference-ktx" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+
+material3 = { group = "androidx.compose.material3", name = "material3" }
+composeMaterial = { group = "androidx.compose.material", name = "material" }
+composeMaterialIcons = { group = "androidx.compose.material", name = "material-icons-extended" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+
+hiltNavigation = { module = "androidx.hilt:hilt-navigation-compose" , version = "1.0.0" }
+hiltAndroid = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hiltCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+
+ui = { group = "androidx.compose.ui", name = "ui" }
+ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofitMoshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+retrofitGson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+
+coilCompose = { module = "io.coil-kt:coil-compose", version.ref = "coil"}
+coilGif = { module = "io.coil-kt:coil-gif", version.ref = "coil"}
+
+mmkv = { module = "com.tencent:mmkv", version.ref = "mmkv"}
+
+accompanistNavigation = { module = "com.google.accompanist:accompanist-navigation-material", version.ref = "accompanist" }
+accompanistSystemUi = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
+accompanistPager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanist" }
+accompanistPagerIndicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanist" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+[bundles]
+
+accomponist = ["accompanistNavigation", "accompanistSystemUi", "accompanistPager", "accompanistPagerIndicators"]
+androidx = ["appcompat","appcompat-resources", "core-ktx", "lifecycle-runtime-ktx", "activity-compose", "preference-ktx"]
+compose = ["ui", "ui-graphics", "ui-tooling", "ui-tooling-preview", "ui-test-manifest", "material3", "material3", "composeMaterial", "composeMaterialIcons"]
+ui = ["coilCompose", "coilGif"]
+retrofit = ["retrofit", "retrofitMoshi", "retrofitGson"]
+hilt = ["hiltNavigation", "hiltAndroid"]

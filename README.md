@@ -1,7 +1,7 @@
 # Nextshiki
-# https://github.com/RecodeLiner/Nextshiki
 
-Nextshiki - unofficial MD3 client for shikimori(https://shikimori.one), written on Kotlin, Compose, Hilt, Retrofit and more.
+Nextshiki - unofficial MD3 client for [Shikimori](https://shikimori.one), written on [Kotlin](https://kotlinlang.org), [Jetpack Compose](https://developer.android.com/jetpack/compose), [Hilt](https://developer.android.com/jetpack/compose/Hilt], [Retrofit](https://square.github.io/retrofit) and more.
+Client based only on official API [Shikimori](https://shikimori.me/api/doc)
 
 ## Features
 

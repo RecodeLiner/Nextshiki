@@ -1,4 +1,4 @@
-package com.rcl.nextshiki.retrofit.animemodel
+package com.rcl.models.animemodel
 
 data class Image(
     val original: String,

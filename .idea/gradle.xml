@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/domain" />
             <option value="$PROJECT_DIR$/microapp" />
             <option value="$PROJECT_DIR$/microapp/preferences" />
+            <option value="$PROJECT_DIR$/models" />
             <option value="$PROJECT_DIR$/uikit" />
           </set>
         </option>

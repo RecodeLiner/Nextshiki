@@ -1,4 +1,4 @@
-package com.rcl.nextshiki.retrofit.usermodel.stats
+package com.rcl.models.usermodel.stats
 
 data class Ratings(
     val anime: List<StructBody>,

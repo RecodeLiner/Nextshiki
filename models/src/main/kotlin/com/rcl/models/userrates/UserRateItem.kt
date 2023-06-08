@@ -1,4 +1,4 @@
-package com.rcl.nextshiki.retrofit.userrates
+package com.rcl.models.userrates
 
 data class UserRateItem(
     val chapters: Int,

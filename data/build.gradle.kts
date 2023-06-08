@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -13,6 +15,11 @@ android {
 
         consumerProguardFiles("consumer-rules.pro")
     }
+    buildFeatures{
+        buildConfig = true
+    }
+    val clientId: String = gradleLocalProperties(rootDir).getProperty("clientId")
+    val clientSecret: String = gradleLocalProperties(rootDir).getProperty("clientSecret")
 
     buildTypes {
         release {
@@ -21,6 +28,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "CLIENT_ID", clientId)
+            buildConfigField("String", "CLIENT_SECRET", clientSecret)
+        }
+        debug {
+            buildConfigField("String", "CLIENT_ID", clientId)
+            buildConfigField("String", "CLIENT_SECRET", clientSecret)
         }
     }
     compileOptions {
@@ -33,6 +46,7 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":models")))
     implementation (libs.bundles.androidx)
     implementation (libs.hiltNavigation)
     implementation (libs.hiltAndroid)

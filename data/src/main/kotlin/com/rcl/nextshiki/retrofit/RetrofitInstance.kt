@@ -12,14 +12,18 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RetrofitInstance {
-    private const val BaseUrl = "https://shikimori.me/api/"
+    private const val BaseUrl = "https://shikimori.me/"
+    var token: String? = null
 
     private fun getClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor { chain ->
-                val request = chain.request().newBuilder()
+                val requestBuilder = chain.request().newBuilder()
                     .header("User-Agent", "NextShiki")
-                    .build()
+                if (token != null) {
+                    requestBuilder.addHeader("Authorization", "Bearer $token")
+                }
+                val request = requestBuilder.build()
                 chain.proceed(request)
             }
             .build()

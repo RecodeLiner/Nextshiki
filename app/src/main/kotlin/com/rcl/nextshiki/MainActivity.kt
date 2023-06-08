@@ -29,8 +29,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.rcl.nextshiki.navigation.NavClass
-import com.rcl.nextshiki.user.Auth
 import com.rcl.nextshiki.user.HiltVM
+import com.rcl.nextshiki.user.User.isAuthorized
+import com.rcl.nextshiki.user.User.vm
 import com.rcl.ui.theme.Theme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -48,13 +49,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val vm = hiltViewModel<HiltVM>()
-
-                    if (vm.getStringPref("AuthCode") != null) {
-                        NavBar(vm)
-                    } else {
-                        Auth().AuthInApp(vm)
+                    vm = hiltViewModel<HiltVM>()
+                    if (vm.getStringPref("authCode") != null) {
+                        isAuthorized = true
+                        vm.upgradeToken()
                     }
+                    NavBar()
                 }
             }
         }
@@ -69,7 +69,7 @@ class MainActivity : ComponentActivity() {
 
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @Composable
-    fun NavBar(viewModel: HiltVM) {
+    fun NavBar() {
         val backStackEntry = navController.currentBackStackEntryAsState()
         Box(
             modifier = Modifier.padding(
@@ -107,7 +107,7 @@ class MainActivity : ComponentActivity() {
                     }
                 },
                 content = {
-                    NavClass().Navigation(navController = navController, viewModel = viewModel)
+                    NavClass().Navigation(navController = navController)
                 }
             )
         }

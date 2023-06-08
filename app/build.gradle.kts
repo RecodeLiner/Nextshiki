@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.bundles.compose)
     implementation(libs.bundles.hilt)
     implementation (libs.browsercct)
+    implementation(project(mapOf("path" to ":models")))
     kapt (libs.hiltCompiler)
     implementation(libs.bundles.accomponist)
     implementation(libs.bundles.retrofit)

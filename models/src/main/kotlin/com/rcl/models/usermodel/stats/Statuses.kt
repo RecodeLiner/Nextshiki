@@ -1,4 +1,4 @@
-package com.rcl.nextshiki.retrofit.usermodel.stats
+package com.rcl.models.usermodel.stats
 
 data class Statuses(
     val anime: List<StatsBody>,

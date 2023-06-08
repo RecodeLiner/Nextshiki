@@ -7,20 +7,23 @@ import androidx.navigation.compose.composable
 import com.rcl.nextshiki.navigation.screens.MainScreen
 import com.rcl.nextshiki.navigation.screens.ProfileScreen
 import com.rcl.nextshiki.navigation.screens.SearchScreen
-import com.rcl.nextshiki.user.HiltVM
+import com.rcl.nextshiki.user.Auth
 
 class NavClass{
     @Composable
-    fun Navigation(navController: NavHostController, viewModel: HiltVM) {
+    fun Navigation(navController: NavHostController) {
         NavHost(navController = navController, startDestination = Routes.MainScreen.routes) {
             composable(Routes.MainScreen.routes) {
-                MainScreen().Screen(viewModel = viewModel)
+                MainScreen().Screen()
             }
             composable(Routes.SearchScreen.routes) {
                 SearchScreen().Screen()
             }
             composable(Routes.ProfileScreen.routes) {
                 ProfileScreen().Screen(navController)
+            }
+            composable(Routes.LoginScreen.routes) {
+                Auth().AuthInApp(navController = navController)
             }
         }
     }

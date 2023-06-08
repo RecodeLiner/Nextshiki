@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nextshiki</string>
+    <string name="bottom_main">Главная</string>
+    <string name="not_logged_in">Вы ещё не вошли в профиль</string>
+    <string name="login">Авторизоваться</string>
+</resources>

@@ -1,9 +1,7 @@
 package com.rcl.nextshiki.user
 
-import com.rcl.nextshiki.retrofit.usermodel.UserData
-
 object User {
-    const val sharedPrefName = "SherPref"
-    const val tokprf = "token"
-    lateinit var CurrUser: UserData
+    var isAuthorized: Boolean = false
+    lateinit var accessCode: String
+    lateinit var vm: HiltVM
 }

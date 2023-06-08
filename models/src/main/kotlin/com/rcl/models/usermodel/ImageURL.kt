@@ -1,4 +1,4 @@
-package com.rcl.nextshiki.retrofit.usermodel
+package com.rcl.models.usermodel
 
 data class ImageURL(
     val x160: String,
